@@ -3,6 +3,15 @@
  * @author Emilio Ahumada
  * @year 2015
  */
+
+//la configuración basica
+$data = file_get_contents('protected/config/basicConfig.json');
+$jsonData = json_decode($data, true);
+$basicConfig = new  stdClass();
+foreach ($jsonData as $key => $json) {
+  $basicConfig = json_decode(json_encode($json));
+}
+
 session_start();
 $usuario = isset( $_SESSION['usuario'] )?$_SESSION['usuario']:null;
 $page=null;
@@ -29,7 +38,9 @@ $page=null;
 </head>
 <body>
 <?php
-if( $usuario==null ){
+if( !$basicConfig->isInstalled ){
+  require_once(dirname(__FILE__).'/views/instalar.php');
+} else if( $usuario==null ){
   require_once(dirname(__FILE__).'/views/login.php');
 } else {
   //cargar vista menú base :3
