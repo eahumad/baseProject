@@ -11,7 +11,7 @@ $basicConfig = new  stdClass();
 foreach ($jsonData as $key => $json) {
   $basicConfig = json_decode(json_encode($json));
 }
-
+$version='0.01';
 session_start();
 $usuario = isset( $_SESSION['usuario'] )?$_SESSION['usuario']:null;
 $page=null;
@@ -28,8 +28,6 @@ $page=null;
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-
   <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
 
   <link href="assets/fonts/raleway/stylesheet.css" rel="stylesheet">
@@ -65,5 +63,10 @@ if( !$basicConfig->isInstalled ){
 <?php
 } //fin else
 ?>
+
+<!--javascript-->
+<script src="assets/js/jquery-1.12.3.js?version=<?php echo $version; ?>"></script>
+<script src="assets/js/vendor/respond.js?version=<?php echo $version; ?>"></script>
+<script src="assets/js/bootstrap.js?version=<?php echo $version; ?>"></script>
 </body>
 </html>
