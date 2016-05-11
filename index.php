@@ -30,6 +30,8 @@ $page=null;
   <link href="assets/css/bootstrap.css" rel="stylesheet">
   <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
 
+  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
   <link href="assets/fonts/raleway/stylesheet.css" rel="stylesheet">
   <link href="assets/css/login.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
@@ -68,5 +70,29 @@ if( !$basicConfig->isInstalled ){
 <script src="assets/js/jquery-1.12.3.js?version=<?php echo $version; ?>"></script>
 <script src="assets/js/vendor/respond.js?version=<?php echo $version; ?>"></script>
 <script src="assets/js/bootstrap.js?version=<?php echo $version; ?>"></script>
+<script src="assets/js/plugins/jquery.validate/jquery.validate.js?version=<?php echo $version; ?>"></script>
+<script src="assets/js/plugins/jquery.validate/additional-methods.js?version=<?php echo $version; ?>"></script>
+<script src="assets/js/plugins/jquery.validate/localization/messages_es.js?version=<?php echo $version; ?>"></script>
+<?php
+if( !$basicConfig->isInstalled ){
+?>
+<script src="views/instalar.js?version=<?php echo $version; ?>"></script>
+<?php
+} else if( $usuario==null ){
+?>
+<script src="views/login.js?version=<?php echo $version; ?>"></script>
+<?php
+} else {
+  if($page!=null) {
+    try {
+?>
+<script src="views/<?php echo $page->archivo ?>.js?version=<?php echo $version; ?>"></script>
+<?php
+    } catch (Exception $e) {
+
+    }
+  }
+}
+?>
 </body>
 </html>
