@@ -135,13 +135,13 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                60%
+              <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                0%
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-lg-offset-4">
-            <button type="button" class="btn btn-primary form-control"><i class="fa fa-server"></i> Instalar</button>
+            <button type="button" class="btn btn-primary form-control" id="btnInstalar"><i class="fa fa-server"></i> Instalar</button>
           </div>
         </div>
       </div>

@@ -70,6 +70,7 @@ if( !$basicConfig->isInstalled ){
 <script src="assets/js/jquery-1.12.3.js?version=<?php echo $version; ?>"></script>
 <script src="assets/js/vendor/respond.js?version=<?php echo $version; ?>"></script>
 <script src="assets/js/bootstrap.js?version=<?php echo $version; ?>"></script>
+<script src="assets/js/utils.js?version=<?php echo $version; ?>"></script>
 <script src="assets/js/plugins/jquery.validate/jquery.validate.js?version=<?php echo $version; ?>"></script>
 <script src="assets/js/plugins/jquery.validate/additional-methods.js?version=<?php echo $version; ?>"></script>
 <script src="assets/js/plugins/jquery.validate/localization/messages_es.js?version=<?php echo $version; ?>"></script>

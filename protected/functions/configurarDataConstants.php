@@ -1,5 +1,5 @@
 <?php
-$dbDatos = $_POST[];
+$dbDatos = $_POST;
 
 function generateDataConstans($dbDatos) {
   try {
@@ -11,7 +11,7 @@ define('_db_$key','$dato');
     }
 
     //escribir archivo
-    $dataConstansFile = fopen('../config/dataConstans.php','W+');
+    $dataConstansFile = fopen('../config/dataConstants.php','w+');
     fwrite($dataConstansFile, $constantsString);
     fclose($dataConstansFile);
 
@@ -25,4 +25,4 @@ define('_db_$key','$dato');
 //primero se debe generar las constantes
 generateDataConstans($dbDatos);
 
-//requerir la clase conexion
+echo json_encode(1);

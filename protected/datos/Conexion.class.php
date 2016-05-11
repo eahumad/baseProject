@@ -1,5 +1,5 @@
 <?php  
-require_once(dirname(__FILE__).'/../config/dataConstants')
+require_once(dirname(__FILE__).'/../config/dataConstants.php');
 
 class Conexion{
   
@@ -12,8 +12,8 @@ class Conexion{
   public $username='anónimo';
 //En el constructor de la clase establecemos los parámetros de conexión con la base de datos
 
-  private function __construct($dbuser = _db_username, $dbpass = _db_password, $dbname = _db_dbName, $dbhost = _db_host.':'._db_port){
-    $this->dbhost = $dbhost;
+  public function __construct($dbuser = _db_username, $dbpass = _db_password, $dbname = _db_dbName, $dbhost = _db_host, $dbport=_db_port ){
+    $this->dbhost = $dbhost.':'.$dbport;
     $this->dbuser = $dbuser;
     $this->dbpass = $dbpass;
     $this->dbname = $dbname;
@@ -91,7 +91,7 @@ class Conexion{
 
 //La función "cerrar" finaliza la conexión con la base de datos.
 
-  public function cerrar(){
+  public function close(){
     mysqli_close($this->conn);
   }
 
@@ -99,22 +99,6 @@ class Conexion{
 
   public function escape($value){
     return mysqli_real_escape_string($this->conn,$value);
-  }
-  
-//La función para obtener el singleton
-  public static function getInstance(){
-    if(!isset(self::$instacia)){
-      $miClase = __CLASS__;
-      self::$instacia= new $miClase;
-    }
-    return self::$instacia;
-  }
-
-
-//Evitar que el objeto sea clonado
-
-  public function __clone(){
-    trigger_error("No está permitido clonar este objeto",E_USER_ERROR);
   }
 }
 ?>
