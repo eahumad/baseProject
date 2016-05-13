@@ -5,6 +5,7 @@ CREATE TABLE usuario (
   ,s_correo     varchar(120)  NOT NULL  UNIQUE
   ,s_username   varchar(20)   NOT NULL  UNIQUE
   ,s_password   varchar(32)   NOT NULL
+  ,s_is_admin   char(1)       NOT NULL  DEFAULT 'N'
   ,s_vigencia   char(1)       NOT NULL  DEFAULT 'S'
   ,PRIMARY KEY(id_usuario)
 );
