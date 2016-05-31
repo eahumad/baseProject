@@ -1,0 +1,56 @@
+.login {
+  font-color: #fff;
+  text-align: center;
+}
+
+.login h1{
+  font-size: 8rem;
+  color: #fff;
+}
+
+.login h3{
+  color: #fff;
+  font-family: 'ralewayextralight';
+}
+
+.login.container {
+  height: 100%;
+  width: 100%;
+  background-image: url('../images/login-bg.png');
+}
+
+#formLogin {
+  margin-top: 40px;
+}
+
+#formLogin input {
+  color:#fff;
+  text-align: center;
+  width: 100%;
+  background-color: transparent;
+  border: 0px solid #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  margin-top:10px;
+  padding: 10px 6px;
+}
+
+#formLogin button {
+  color:#fff;
+  margin-top: 50px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 10px 6px;
+  width: 70%;
+}
+
+#formLogin button:hover,
+#formLogin button:focus,
+#formLogin input:hover,
+#formLogin input:focus {
+  border-color: rgba(229, 159, 131, 0.7);
+}
+
+#formLogin button:hover,
+#formLogin button:focus {
+  color: #E59F83;
+}
